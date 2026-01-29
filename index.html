@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>Resume Screening App</title>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.56.0/build/stlite.js"></script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script>
+      stlite.mount(
+        {
+          requirements: ["streamlit", "PyPDF2", "pandas", "scikit-learn", "docx2txt", "plotly", "python-docx"],
+          entrypoint: "resume.py",
+          files: {
+            "resume.py": {
+              url: "resume.py",
+            },
+          },
+        },
+        document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
